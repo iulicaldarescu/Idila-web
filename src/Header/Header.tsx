@@ -41,8 +41,9 @@ function Header() {
         {/* top first container */}
         <div className="flex justify-between">
           {/* left container */}
-          <div className="flex items-center gap-8" onClick={onOffMenu}>
+          <div className="flex items-center gap-8">
             <GiHamburgerMenu
+              onClick={onOffMenu}
               style={{
                 color: "white",
                 backgroundColor: "black",
@@ -103,7 +104,7 @@ function Header() {
         </div>
       </header>
       {/* MODAL menu of hamburger button */}
-      <div className={`modal-container ${transitionClass}`}>
+      <div className={`pb-10 modal-container ${transitionClass}`}>
         {/* top container title and closure */}
         <div className="flex items-center justify-between px-3">
           <h1 className="font-bold text-lg py-3 m-auto">Meniu</h1>
