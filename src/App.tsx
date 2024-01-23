@@ -1,12 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import BrandCarousel from "./Components/Carrousels/BrandCarousel";
+import AdsCarousel from "./Components/Carrousels/AdsCarousel";
 
 function App() {
-  const [count, setCount] = useState(0);
+  return (
+    <>
+      <div className="py-6">
+        <AdsCarousel />
+      </div>
 
-  return <>sal</>;
+      <BrandCarousel />
+    </>
+  );
 }
 
 export default App;
