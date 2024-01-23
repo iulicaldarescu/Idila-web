@@ -1,3 +1,5 @@
+// Import other dependencies
+import React, { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GoPerson } from "react-icons/go";
 import { FaRegHeart } from "react-icons/fa";
@@ -5,18 +7,34 @@ import { BsCart3 } from "react-icons/bs";
 import { SlMagnifier } from "react-icons/sl";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import { useState } from "react";
-import "./header.css";
+import "./Header.css"; // Import the CSS file for styling
 
 function Header() {
   const [modalOnOff, setModalOnOff] = useState<boolean>(false);
+  const [transitionClass, setTransitionClass] = useState<string>("");
+
   const onOffMenu = () => {
     setModalOnOff(!modalOnOff);
   };
 
+  useEffect(() => {
+    if (modalOnOff) {
+      // Delay adding the transition class to ensure it triggers the transition
+      const timeoutId = setTimeout(() => {
+        setTransitionClass("transition");
+      }, 10);
+
+      return () => clearTimeout(timeoutId);
+    } else {
+      // Remove the transition class immediately when closing the modal
+      setTransitionClass("");
+    }
+  }, [modalOnOff]);
+
   const testArr = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
   ];
+
   return (
     <>
       <header className="bg-black flex flex-col px-4 py-3 gap-2">
@@ -85,47 +103,45 @@ function Header() {
         </div>
       </header>
       {/* MODAL menu of hamburger button */}
-      {modalOnOff && (
-        <div className={`fixed top-0 bg-white h-screen w-full pb-10`}>
-          {/* top container title and closure */}
-          <div className="flex items-center justify-between px-3">
-            <h1 className="font-bold text-lg py-3 m-auto">Meniu</h1>
-            {/* X logo container */}
-            <div
-              className="absolute top-[13px] right-[13px]"
-              onClick={onOffMenu}
-            >
-              <IoClose
-                style={{
-                  color: "black",
-                  backgroundColor: "white",
-                  height: "25px",
-                  width: "25px",
-                }}
-              />
-            </div>
+      <div className={`modal-container ${transitionClass}`}>
+        {/* top container title and closure */}
+        <div className="flex items-center justify-between px-3">
+          <h1 className="font-bold text-lg py-3 m-auto">Meniu</h1>
+          {/* X logo container */}
+          <div className="absolute top-[13px] right-[13px]" onClick={onOffMenu}>
+            <IoClose
+              style={{
+                color: "black",
+                backgroundColor: "white",
+                height: "25px",
+                width: "25px",
+              }}
+            />
           </div>
-          {/* menu list */}
-          <menu className="text-[15px] overflow-auto h-full pb-10">
-            <p className="border-y-[1px] py-3 px-4">Autentificare</p>
-            {testArr.map((item) => {
-              return (
-                <li className="flex items-center justify-between border-y-[1px] py-3 px-4">
-                  <p>Promotii</p>
-                  <IoIosArrowForward
-                    style={{
-                      color: "black",
-                      backgroundColor: "white",
-                      height: "22px",
-                      width: "22px",
-                    }}
-                  />
-                </li>
-              );
-            })}
-          </menu>
         </div>
-      )}
+        {/* menu list */}
+        <menu className="text-[15px] overflow-auto h-full pb-10">
+          <p className="border-y-[1px] py-3 px-4">Autentificare</p>
+          {testArr.map((item) => {
+            return (
+              <li
+                key={item}
+                className="flex items-center justify-between border-y-[1px] py-3 px-4"
+              >
+                <p>Promotii</p>
+                <IoIosArrowForward
+                  style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    height: "22px",
+                    width: "22px",
+                  }}
+                />
+              </li>
+            );
+          })}
+        </menu>
+      </div>
     </>
   );
 }
