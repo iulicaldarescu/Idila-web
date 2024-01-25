@@ -12,6 +12,42 @@ function App() {
       </div>
 
       <BrandCarousel />
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
+      <div>2</div>
     </>
   );
 }

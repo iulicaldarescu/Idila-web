@@ -23,7 +23,8 @@ const suggestions = [
 function Header() {
   const [modalOnOff, setModalOnOff] = useState<boolean>(false);
   const [transitionClass, setTransitionClass] = useState<string>("");
-  const [isInputFocused, isSetInputFocused] = useState(false);
+  const [isInputFocused, isSetInputFocused] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const onOffMenu = () => {
     setModalOnOff(!modalOnOff);
@@ -47,9 +48,28 @@ function Header() {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user has scrolled down
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Attach the event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <header className="bg-black flex flex-col px-4 py-3 gap-2">
+      <header className="fixed left-0 right-0 bg-black flex flex-col px-4 py-3 gap-2">
         {/* top first container */}
         <div className="flex justify-between">
           {/* left container */}
@@ -68,6 +88,19 @@ function Header() {
 
           {/* right-container */}
           <div className="flex items-center gap-6">
+            {isScrolled && (
+              <SlMagnifier
+                onClick={() => {
+                  setIsScrolled(false);
+                }}
+                style={{
+                  color: "white",
+                  backgroundColor: "black",
+                  height: "21px",
+                  width: "21px",
+                }}
+              />
+            )}
             <GoPerson
               style={{
                 color: "white",
@@ -94,41 +127,47 @@ function Header() {
             />
           </div>
         </div>
+
         {/* input bottom container */}
-
-        <div className="flex justify-center items-center">
-          {/* input HTML tag */}
-          <input
-            className={`placeholder:font-[500] w-full pl-4 py-2 rounded-tl-3xl text-[15px] focus:outline-none ${
-              !isInputFocused ? "rounded-bl-3xl" : ""
-            }`}
-            type="text"
-            placeholder="Cauta parfum, produse cosmetice brand..."
-            onClick={() => {
-              isSetInputFocused(true);
-            }}
-          ></input>
-
-          {/* magnifying-glass logo container */}
-          <div
-            className={`bg-white py-[10px] px-3 rounded-tr-3xl flex justify-center items-center border-b ${
-              !isInputFocused ? "rounded-br-3xl" : ""
-            }`}
-          >
+        {!isScrolled && (
+          <div className="relative">
+            {/* input HTML tag with magnifier icon */}
+            <input
+              className={`placeholder:font-[500] w-full pl-4 pr-12 py-2 rounded-t-3xl text-[15px] focus:outline-none ${
+                !isInputFocused ? "rounded-b-3xl" : ""
+              }`}
+              type="text"
+              placeholder="Cauta parfum, produse cosmetice brand..."
+              onClick={() => isSetInputFocused(true)}
+            />
+            {/* Magnifying-glass logo container */}
             <SlMagnifier
+              onClick={() => isSetInputFocused(false)}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"
               style={{
-                color: "gray",
-                backgroundColor: "white",
                 height: "18px",
                 width: "18px",
               }}
             />
           </div>
-        </div>
+        )}
       </header>
-      {/* suggestions modal */}
+
+      {/* suggestions modal container */}
       {isInputFocused && (
-        <ul className="absolute top-[90px] left-0 right-2.5 mx-4 z-20 bg-white rounded-bl-3xl rounded-br-3xl p-4">
+        <ul
+          className={`absolute top-[90px] left-0 right-0 mx-4 z-20 bg-red-500 rounded-bl-3xl rounded-br-3xl p-4`}
+        >
+          {/* Close icon container */}
+          <div className="flex justify-end">
+            <IoClose
+              onClick={() => isSetInputFocused(false)}
+              style={{
+                height: "20px",
+                width: "20px",
+              }}
+            />
+          </div>
           {suggestions.map((suggestion) => {
             return <li>{suggestion}</li>;
           })}
