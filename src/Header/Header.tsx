@@ -52,6 +52,7 @@ function Header() {
     const handleScroll = () => {
       // Check if the user has scrolled down
       if (window.scrollY > 0) {
+        isSetInputFocused(false);
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -130,49 +131,50 @@ function Header() {
 
         {/* input bottom container */}
         {!isScrolled && (
-          <div className="relative">
-            {/* input HTML tag with magnifier icon */}
-            <input
-              className={`placeholder:font-[500] w-full pl-4 pr-12 py-2 rounded-t-3xl text-[15px] focus:outline-none ${
-                !isInputFocused ? "rounded-b-3xl" : ""
-              }`}
-              type="text"
-              placeholder="Cauta parfum, produse cosmetice brand..."
-              onClick={() => isSetInputFocused(true)}
-            />
-            {/* Magnifying-glass logo container */}
-            <SlMagnifier
-              onClick={() => isSetInputFocused(false)}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"
-              style={{
-                height: "18px",
-                width: "18px",
-              }}
-            />
+          <div>
+            <div className="relative">
+              {/* input HTML tag with magnifier icon */}
+              <input
+                className={`placeholder:font-[500] w-full pl-4 pr-12 py-2 rounded-t-3xl text-[15px] focus:outline-none ${
+                  !isInputFocused ? "rounded-b-3xl" : ""
+                }`}
+                type="text"
+                placeholder="Cauta parfum, produse cosmetice brand..."
+                onClick={() => isSetInputFocused(true)}
+              />
+              {/* Magnifying-glass logo container */}
+              <SlMagnifier
+                onClick={() => isSetInputFocused(false)}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"
+                style={{
+                  height: "18px",
+                  width: "18px",
+                }}
+              />
+            </div>
+            {/* suggestions modal container */}
+            {isInputFocused && (
+              <ul
+                className={`absolute top-[90px] left-0 right-0 mx-4 z-20 bg-red-500 rounded-bl-3xl rounded-br-3xl p-4`}
+              >
+                {/* Close icon container */}
+                <div className="flex justify-end">
+                  <IoClose
+                    onClick={() => isSetInputFocused(false)}
+                    style={{
+                      height: "20px",
+                      width: "20px",
+                    }}
+                  />
+                </div>
+                {suggestions.map((suggestion) => {
+                  return <li>{suggestion}</li>;
+                })}
+              </ul>
+            )}
           </div>
         )}
       </header>
-
-      {/* suggestions modal container */}
-      {isInputFocused && (
-        <ul
-          className={`absolute top-[90px] left-0 right-0 mx-4 z-20 bg-red-500 rounded-bl-3xl rounded-br-3xl p-4`}
-        >
-          {/* Close icon container */}
-          <div className="flex justify-end">
-            <IoClose
-              onClick={() => isSetInputFocused(false)}
-              style={{
-                height: "20px",
-                width: "20px",
-              }}
-            />
-          </div>
-          {suggestions.map((suggestion) => {
-            return <li>{suggestion}</li>;
-          })}
-        </ul>
-      )}
 
       {/* MODAL menu of hamburger button */}
       <div className={`pb-10 ${styles["modal-container"]} ${transitionClass}`}>
