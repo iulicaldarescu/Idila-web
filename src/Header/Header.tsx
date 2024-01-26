@@ -1,5 +1,5 @@
 // Import other dependencies
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GoPerson } from "react-icons/go";
 import { FaRegHeart } from "react-icons/fa";
@@ -68,9 +68,36 @@ function Header() {
     };
   }, []);
 
+  const outsideSuggestionsContainer = useRef(null);
+
+  const handleOutsideClick = () => {
+    isSetInputFocused(false);
+  };
+
+  const userClickedOutside = (ref: any, callback: any) => {
+    useEffect(() => {
+      const handleClickOutside = (event: any) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          // Click occurred outside of the specified element
+          callback();
+        }
+      };
+
+      // Attach the event listener to the document body
+      document.addEventListener("click", handleClickOutside);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }, [ref, callback]);
+  };
+
+  userClickedOutside(outsideSuggestionsContainer, handleOutsideClick);
+
   return (
     <>
-      <header className="fixed left-0 right-0 bg-black flex flex-col px-4 py-3 gap-2">
+      <header className="fixed left-0 right-0 bg-black flex flex-col px-4 py-3 gap-2 z-50">
         {/* top first container */}
         <div className="flex justify-between">
           {/* left container */}
@@ -140,7 +167,10 @@ function Header() {
                 }`}
                 type="text"
                 placeholder="Cauta parfum, produse cosmetice brand..."
-                onClick={() => isSetInputFocused(true)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  isSetInputFocused(true);
+                }}
               />
               {/* Magnifying-glass logo container */}
               <SlMagnifier
@@ -155,7 +185,8 @@ function Header() {
             {/* suggestions modal container */}
             {isInputFocused && (
               <ul
-                className={`absolute top-[90px] left-0 right-0 mx-4 z-20 bg-red-500 rounded-bl-3xl rounded-br-3xl p-4`}
+                ref={outsideSuggestionsContainer}
+                className={`absolute top-[90px] left-0 right-0 mx-4 z-20 bg-white rounded-bl-3xl rounded-br-3xl p-4`}
               >
                 {/* Close icon container */}
                 <div className="flex justify-end">
@@ -198,6 +229,7 @@ function Header() {
           <p className="border-y-[1px] py-3 px-4">Autentificare</p>
           {testArr.map((item) => {
             return (
+              // this to be a component -------
               <li
                 key={item}
                 className="flex items-center justify-between border-y-[1px] py-3 px-4"
@@ -212,6 +244,7 @@ function Header() {
                   }}
                 />
               </li>
+              //  ----------------------------
             );
           })}
         </menu>

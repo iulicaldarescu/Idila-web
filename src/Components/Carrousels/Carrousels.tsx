@@ -5,7 +5,7 @@ import PerfumesCarrousel from "./PerfumesCarrousel";
 
 function Carrousels() {
   return (
-    <div>
+    <div className="pt-[78px]">
       {" "}
       <div className="py-6">
         <AdsCarousel />
