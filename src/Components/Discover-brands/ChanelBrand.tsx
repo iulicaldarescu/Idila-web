@@ -1,4 +1,5 @@
 import chanel from "../../assets/Discover photos/chanel-discover.jpg";
+import DiscoverProduct from "../Buttons/DiscoverProduct";
 
 function ChanelBrand() {
   return (
@@ -7,8 +8,9 @@ function ChanelBrand() {
         <div className="basis-7/12">
           <img src={chanel} className=" bg-cover"></img>
         </div>
-        <div className="bg-black basis-5/12">
+        <div className=" basis-5/12">
           <p className="text-white">text description</p>
+          <DiscoverProduct>Discover Chanel</DiscoverProduct>
         </div>
       </div>
     </>

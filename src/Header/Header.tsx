@@ -8,6 +8,7 @@ import { SlMagnifier } from "react-icons/sl";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import styles from "../Header/Header.module.css";
+import Categories from "../Components/Categories/Categories";
 
 const suggestions = [
   "abcdddd",
@@ -43,10 +44,6 @@ function Header() {
       setTransitionClass("");
     }
   }, [modalOnOff]);
-
-  const testArr = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -225,29 +222,7 @@ function Header() {
           </div>
         </div>
         {/* menu list */}
-        <menu className="text-[15px] overflow-auto h-full pb-10">
-          <p className="border-y-[1px] py-3 px-4">Autentificare</p>
-          {testArr.map((item) => {
-            return (
-              // this to be a component -------
-              <li
-                key={item}
-                className="flex items-center justify-between border-y-[1px] py-3 px-4"
-              >
-                <p>Promotii</p>
-                <IoIosArrowForward
-                  style={{
-                    color: "black",
-                    backgroundColor: "white",
-                    height: "22px",
-                    width: "22px",
-                  }}
-                />
-              </li>
-              //  ----------------------------
-            );
-          })}
-        </menu>
+        <Categories />
       </div>
     </>
   );
