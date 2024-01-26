@@ -1,0 +1,41 @@
+{
+  "selections": [
+    {
+      "category": "Promotii",
+      "image": "/src/assets/Selection images/discount.svg",
+      "description": "Special offers and discounts"
+    },
+    {
+      "category": "Parfumuri",
+      "image": "/src/assets/Selection images/parfumes.jpg",
+      "description": "Fragrances and perfumes"
+    },
+
+    {
+      "category": "Produse par",
+      "image": "/src/assets/Selection images/hair.jpg",
+      "description": "Hair care and styling"
+    },
+    {
+      "category": "Make-up",
+      "image": "/src/assets/Selection images/cosmetics.jpg",
+      "description": "Makeup products and tools"
+    },
+
+    {
+      "category": "Skincare",
+      "image": "/src/assets/Selection images/body.jpg",
+      "description": "Skincare routines and products"
+    },
+    {
+      "category": "Men's Grooming",
+      "image": "/src/assets/Selection images/men-grooming.jpg",
+      "description": "Grooming products for men"
+    },
+    {
+      "category": "Seturi cadou",
+      "image": "/src/assets/Selection images/gift.jpg",
+      "description": "Gift sets and bundles"
+    }
+  ]
+}

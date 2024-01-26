@@ -1,31 +1,10 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import logos from "../../brand-logos.json";
+import Brand from "../Brands/Brand";
 
 import { useEffect, useState } from "react";
-
-const perfumeBrands = [
-  "Chanel",
-  "Dior",
-  "Gucci",
-  "Tom Ford",
-  "Yves Saint Laurent",
-  "Prada",
-  "Versace",
-  "Armani",
-  "Bvlgari",
-  "Calvin Klein",
-  "Marc Jacobs",
-  "Givenchy",
-  "Hermès",
-  "Ralph Lauren",
-  "Jo Malone",
-  "YSL (Yves Saint Laurent)",
-  "Dolce & Gabbana",
-  "Burberry",
-  "Clinique",
-  "Estée Lauder",
-];
 
 function BrandCarousel() {
   const [slidesToShow, setSlidesToShow] = useState(1);
@@ -39,7 +18,7 @@ function BrandCarousel() {
     slidesToScroll: 1,
     arrows: false,
     focusOnSelect: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
   };
 
@@ -62,18 +41,13 @@ function BrandCarousel() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  console.log(logos.brands[0].logo);
 
   return (
-    <div className="px-6">
-      <Slider {...settings} className={`bg-blue-600 `}>
-        {perfumeBrands.map((perfume) => {
-          return (
-            <div
-              className={`text-center bg-red-400 py-8 h-20 text-xs border border-gray-400`}
-            >
-              <p>{perfume}</p>
-            </div>
-          );
+    <div className="px-6 ">
+      <Slider {...settings} className={` `}>
+        {logos.brands.map((brand) => {
+          return <Brand brandLogo={brand.logo} brandName={brand.name} />;
         })}
       </Slider>
     </div>

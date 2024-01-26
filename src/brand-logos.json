@@ -1,0 +1,32 @@
+{
+  "brands": [
+    {
+      "name": "Dior",
+      "logo": "/src/assets/Brand Logos/dior.svg"
+    },
+    {
+      "name": "Chanel",
+      "logo": "/src/assets/Brand Logos/Chanel.svg"
+    },
+    {
+      "name": "Dolce & Gabbana",
+      "logo": "/src/assets/Brand Logos/dolce.svg"
+    },
+    {
+      "name": "Giorgio Armani",
+      "logo": "/src/assets/Brand Logos/armani.svg"
+    },
+    {
+      "name": "Versace",
+      "logo": "/src/assets/Brand Logos/versace.svg"
+    },
+    {
+      "name": "Paco Rabanne",
+      "logo": "/src/assets/Brand Logos/paco.svg"
+    },
+    {
+      "name": "Carolina Herrera",
+      "logo": "/src/assets/Brand Logos/carolina.svg"
+    }
+  ]
+}

@@ -1,17 +1,14 @@
 import "./App.css";
-import BrandCarousel from "./Components/Carrousels/BrandCarousel";
-import AdsCarousel from "./Components/Carrousels/AdsCarousel";
+import Carrousels from "./Components/Carrousels/Carrousels";
 import Header from "./Header/Header";
+import DiscoverBrands from "./Components/Discover-brands/DiscoverBrands";
 
 function App() {
   return (
     <>
       <Header />
-      <div className="py-6">
-        <AdsCarousel />
-      </div>
-
-      <BrandCarousel />
+      <Carrousels />
+      <DiscoverBrands />
     </>
   );
 }

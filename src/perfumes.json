@@ -1,0 +1,172 @@
+{
+  "perfumes": [
+    {
+      "name": "Chanel No. 5",
+      "brand": "Chanel",
+      "price": 100.0,
+      "gender": "Female",
+      "notes": ["Ylang-ylang", "Jasmine", "Rose"],
+      "sizes": ["50ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": false
+    },
+    {
+      "name": "Dolce & Gabbana Light Blue",
+      "brand": "Dolce & Gabbana",
+      "price": 80.0,
+      "gender": "Female",
+      "notes": ["Sicilian Lemon", "Cedar", "Apple"],
+      "sizes": ["50ml", "75ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": false
+    },
+    {
+      "name": "Bleu de Chanel",
+      "brand": "Chanel",
+      "price": 120.0,
+      "gender": "Male",
+      "notes": ["Citrus", "Incense", "Ginger"],
+      "sizes": ["50ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": true
+    },
+    {
+      "name": "Flowerbomb",
+      "brand": "Viktor & Rolf",
+      "price": 150.0,
+      "gender": "Female",
+      "notes": ["Jasmine", "Rose", "Patchouli"],
+      "sizes": ["75ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": true
+    },
+    {
+      "name": "Acqua di Giò",
+      "brand": "Giorgio Armani",
+      "price": 90.0,
+      "gender": "Male",
+      "notes": ["Sea Notes", "Musk", "Cedar"],
+      "sizes": ["50ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": false
+    },
+    {
+      "name": "La Vie Est Belle",
+      "brand": "Lancôme",
+      "price": 110.0,
+      "gender": "Female",
+      "notes": ["Iris", "Patchouli", "Vanilla"],
+      "sizes": ["50ml", "75ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": true
+    },
+    {
+      "name": "Versace Eros",
+      "brand": "Versace",
+      "price": 100.0,
+      "gender": "Male",
+      "notes": ["Mint", "Green Apple", "Tonka Bean"],
+      "sizes": ["100ml", "150ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": false
+    },
+    {
+      "name": "Black Opium",
+      "brand": "Yves Saint Laurent",
+      "price": 130.0,
+      "gender": "Female",
+      "notes": ["Coffee", "Vanilla", "White Flowers"],
+      "sizes": ["50ml", "75ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": true
+    },
+    {
+      "name": "Paco Rabanne 1 Million",
+      "brand": "Paco Rabanne",
+      "price": 95.0,
+      "gender": "Male",
+      "notes": ["Blood Mandarin", "Cinnamon", "Leather"],
+      "sizes": ["100ml", "200ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": false
+    },
+    {
+      "name": "Jimmy Choo Eau de Parfum",
+      "brand": "Jimmy Choo",
+      "price": 120.0,
+      "gender": "Female",
+      "notes": ["Pear", "Green Notes", "Toffee"],
+      "sizes": ["75ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": true
+    },
+    {
+      "name": "J'adore Eau de Parfum",
+      "brand": "Dior",
+      "price": 150.0,
+      "gender": "Female",
+      "notes": ["Ylang-ylang", "Damascus Rose", "Jasmine Grandiflorum"],
+      "sizes": ["50ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": false
+    },
+    {
+      "name": "J'adore Eau de Parfum",
+      "brand": "Dior",
+      "price": 150.0,
+      "gender": "Female",
+      "notes": ["Ylang-ylang", "Damascus Rose", "Jasmine Grandiflorum"],
+      "sizes": ["50ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": true
+    },
+    {
+      "name": "J'adore Eau de Parfum",
+      "brand": "Dior",
+      "price": 150.0,
+      "gender": "Female",
+      "notes": ["Ylang-ylang", "Damascus Rose", "Jasmine Grandiflorum"],
+      "sizes": ["50ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": true
+    },
+    {
+      "name": "J'adore Eau de Parfum",
+      "brand": "Dior",
+      "price": 150.0,
+      "gender": "Female",
+      "notes": ["Ylang-ylang", "Damascus Rose", "Jasmine Grandiflorum"],
+      "sizes": ["50ml", "100ml"],
+      "photo": "/src/assets/Perfumes Photos/Chanel.svg",
+      "promotion": false,
+      "freeDelivery": true,
+      "onSale": false
+    }
+  ]
+}
