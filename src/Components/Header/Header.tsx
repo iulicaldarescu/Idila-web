@@ -8,7 +8,7 @@ import { SlMagnifier } from "react-icons/sl";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import styles from "../Header/Header.module.css";
-import Categories from "../Components/Categories/Categories";
+import Categories from "../Categories/Categories";
 
 const suggestions = [
   "abcdddd",

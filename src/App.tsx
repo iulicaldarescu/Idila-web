@@ -1,7 +1,9 @@
 import "./App.css";
 import Carrousels from "./Components/Carrousels/Carrousels";
-import Header from "./Header/Header";
+
 import DiscoverBrands from "./Components/Discover-brands/DiscoverBrands";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
 
 function App() {
   const arr = [];
@@ -19,6 +21,7 @@ function App() {
       {arr.map((e) => {
         return <div>{e}</div>;
       })}
+      <Footer />
     </>
   );
 }

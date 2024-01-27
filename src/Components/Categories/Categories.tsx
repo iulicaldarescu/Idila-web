@@ -5,7 +5,7 @@ const testArr = [
 
 function Categories() {
   return (
-    <menu className="text-[15px] overflow-auto h-full pb-10">
+    <menu className="text-[18px] overflow-auto h-full pb-10">
       <p className="border-y-[1px] py-3 px-4">Autentificare</p>
       {testArr.map(() => {
         return <Category />;
