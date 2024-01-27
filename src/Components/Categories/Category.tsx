@@ -14,7 +14,7 @@ function Category() {
   };
 
   return (
-    <li className="border-y-[1px] py-3 px-4 flex flex-col gap-2">
+    <li className="border-y-[1px] pt-3 pb-1 px-4 flex flex-col gap-2">
       {/* main container */}
       <div className="flex items-center justify-between">
         <p>Promotii</p>
@@ -42,44 +42,43 @@ function Category() {
       </div>
 
       {/* show more container */}
-      {showOnOff && (
-        <div
-          className="pl-4 flex flex-col gap-2 text-[15px]"
-          style={{
-            maxHeight: `${containerHeight}px`,
-            overflow: "auto",
-            transition: "max-height 0.7s ease",
-          }}
-        >
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-          <p>ASasdasdasd</p>
-        </div>
-      )}
+      {/* this remains in code even if the menu category is closed from GUI but if we use {showOnOff && ...} it cancelling progressive effect */}
+      <div
+        className="pl-4 flex flex-col gap-2 text-[15px]"
+        style={{
+          maxHeight: `${containerHeight}px`,
+          overflow: "auto",
+          transition: "max-height 0.7s ease",
+        }}
+      >
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+        <p>ASasdasdasd</p>
+      </div>
     </li>
   );
 }
