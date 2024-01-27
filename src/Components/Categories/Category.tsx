@@ -42,42 +42,44 @@ function Category() {
       </div>
 
       {/* show more container */}
-      <div
-        className="pl-4 flex flex-col gap-2 text-[15px]"
-        style={{
-          maxHeight: `${containerHeight}px`,
-          overflow: "auto",
-          transition: "max-height 0.7s ease",
-        }}
-      >
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-        <p>ASasdasdasd</p>
-      </div>
+      {showOnOff && (
+        <div
+          className="pl-4 flex flex-col gap-2 text-[15px]"
+          style={{
+            maxHeight: `${containerHeight}px`,
+            overflow: "auto",
+            transition: "max-height 0.7s ease",
+          }}
+        >
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+          <p>ASasdasdasd</p>
+        </div>
+      )}
     </li>
   );
 }
