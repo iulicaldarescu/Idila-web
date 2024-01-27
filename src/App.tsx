@@ -1,8 +1,9 @@
 import "./App.css";
 import Carrousels from "./Components/Carrousels/Carrousels";
-import Header from "./Header/Header";
 import DiscoverBrands from "./Components/Discover-brands/DiscoverBrands";
 import supabase from "./config/supabaseClient.js";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
 
 function App() {
   console.log(supabase);
@@ -22,6 +23,7 @@ function App() {
       {arr.map((e) => {
         return <div>{e}</div>;
       })}
+      <Footer />
     </>
   );
 }
