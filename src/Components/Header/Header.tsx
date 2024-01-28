@@ -9,6 +9,8 @@ import { IoClose } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import styles from "../Header/Header.module.css";
 import Categories from "../Categories/Categories";
+import { useQuery } from "@tanstack/react-query";
+import getData from "../../Utilities/FetchData.js";
 
 const suggestions = [
   "abcdddd",
@@ -26,6 +28,11 @@ function Header() {
   const [transitionClass, setTransitionClass] = useState<string>("");
   const [isInputFocused, isSetInputFocused] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["categories"],
+    queryFn: getData,
+  });
 
   const onOffMenu = () => {
     setModalOnOff(!modalOnOff);
@@ -91,6 +98,10 @@ function Header() {
   };
 
   userClickedOutside(outsideSuggestionsContainer, handleOutsideClick);
+
+  if (isLoading) {
+    return <p>LOADING</p>;
+  }
 
   return (
     <>
@@ -222,7 +233,7 @@ function Header() {
           </div>
         </div>
         {/* menu list */}
-        <Categories />
+        <Categories productCategories={data} />
       </div>
     </>
   );

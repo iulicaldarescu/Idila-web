@@ -4,6 +4,7 @@ import DiscoverBrands from "./Components/Discover-brands/DiscoverBrands";
 import supabase from "./config/supabaseClient.js";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
   console.log(supabase);
@@ -13,10 +14,11 @@ function App() {
     arr.push(i);
   }
 
-  return (
-    <>
-      <Header />
+  const queryClient = new QueryClient();
 
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Header />
       <Carrousels />
       <DiscoverBrands />
 
@@ -24,7 +26,7 @@ function App() {
         return <div>{e}</div>;
       })}
       <Footer />
-    </>
+    </QueryClientProvider>
   );
 }
 

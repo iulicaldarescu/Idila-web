@@ -1,7 +1,16 @@
 import { useState, useEffect } from "react";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 
-function Category() {
+type itemObj = {
+  id: string;
+  category_name: string;
+};
+
+type itemType = {
+  item: itemObj;
+};
+
+function Category({ item }: itemType) {
   const [showOnOff, setShowOnOf] = useState<boolean>(false);
   const showMore = () => {
     setShowOnOf(!showOnOff);
@@ -11,7 +20,7 @@ function Category() {
     <li className="border-y-[1px] py-3 px-4 flex flex-col gap-2">
       {/* main container */}
       <div className="flex items-center justify-between">
-        <p>Promotii</p>
+        <p>{item.category_name}</p>
         {!showOnOff ? (
           <IoIosArrowForward
             onClick={showMore}
