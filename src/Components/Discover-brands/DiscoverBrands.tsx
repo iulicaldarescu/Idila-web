@@ -3,7 +3,7 @@ import DolceGabbanaBrand from "./DolceGabbanaBrand";
 
 function DiscoverBrands() {
   return (
-    <div>
+    <div className="">
       <ChanelBrand />
       <DolceGabbanaBrand />
     </div>

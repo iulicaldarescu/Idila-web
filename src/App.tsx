@@ -1,31 +1,39 @@
 import "./App.css";
 import Carrousels from "./Components/Carrousels/Carrousels";
 import DiscoverBrands from "./Components/Discover-brands/DiscoverBrands";
-import supabase from "./config/supabaseClient.js";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
+import { Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ProductCategory from "./pages/ProductCategory.js";
 
 function App() {
-  console.log(supabase);
-
-  const arr = [];
-  for (let i = 0; i < 100; i++) {
-    arr.push(i);
-  }
-
   const queryClient = new QueryClient();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Header />
-      <Carrousels />
-      <DiscoverBrands />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Carrousels /> <DiscoverBrands /> <Footer />{" "}
+            </>
+          }
+        ></Route>
 
-      {arr.map((e) => {
-        return <div>{e}</div>;
-      })}
-      <Footer />
+        <Route
+          path="/:category_name"
+          element={
+            <>
+              {" "}
+              <Header />
+              <ProductCategory />
+            </>
+          }
+        ></Route>
+      </Routes>
     </QueryClientProvider>
   );
 }
