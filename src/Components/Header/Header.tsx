@@ -110,15 +110,28 @@ function Header() {
         <div className="flex justify-between">
           {/* left container */}
           <div className="flex items-center gap-8">
-            <GiHamburgerMenu
-              onClick={onOffMenu}
-              style={{
-                color: "white",
-                backgroundColor: "black",
-                height: "23px",
-                width: "23px",
-              }}
-            />
+            {!modalOnOff ? (
+              <GiHamburgerMenu
+                onClick={onOffMenu}
+                style={{
+                  color: "white",
+                  backgroundColor: "black",
+                  height: "23px",
+                  width: "23px",
+                }}
+              />
+            ) : (
+              <IoClose
+                onClick={onOffMenu}
+                style={{
+                  color: "white",
+                  backgroundColor: "black",
+                  height: "23px",
+                  width: "23px",
+                }}
+              />
+            )}
+
             <p className="text-white font-bold text-2xl">IDILA</p>
           </div>
 
