@@ -246,7 +246,7 @@ function Header() {
           </div>
         </div>
         {/* menu list */}
-        <Categories productCategories={data} />
+        <Categories productCategories={data} setModalOnOff={setModalOnOff} />
       </div>
     </>
   );

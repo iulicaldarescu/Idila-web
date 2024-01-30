@@ -30,6 +30,7 @@ function App() {
               {" "}
               <Header />
               <ProductCategory />
+              <Footer />
             </>
           }
         ></Route>
